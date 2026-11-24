@@ -1,9 +1,26 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore, enableIndexedDbPersistence } from 'firebase/firestore';
-import config from '../firebase-applet-config.json';
+import { getAnalytics, isSupported } from 'firebase/analytics';
 
-const app = initializeApp(config);
+const firebaseConfig = {
+  apiKey: "AIzaSyBfaiNTYwjwpuIY5pvvT4G6zh8AByXKlqs",
+  authDomain: "prestier-system-llp.firebaseapp.com",
+  projectId: "prestier-system-llp",
+  storageBucket: "prestier-system-llp.firebasestorage.app",
+  messagingSenderId: "948957674286",
+  appId: "1:948957674286:web:b7b24e8451d610d4b8d8bf",
+  measurementId: "G-2L95ENYZQ7"
+};
+
+const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
+
+// Initialize Analytics if supported in browser environment
+isSupported().then((supported) => {
+  if (supported) {
+    getAnalytics(app);
+  }
+}).catch(() => {});
 
 // Enable offline persistence if supported
 try {

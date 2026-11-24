@@ -19,7 +19,7 @@ export default function App() {
   // Form State
   const [formData, setFormData] = useState({
     name: '',
-    phone: '',
+    phone: '+91 ',
     company: '',
     outlets: '1',
     productionInterest: 'Display Cabinet' as 'Display Cabinet' | 'Electric Self Lable' | 'Degree in Equipment',
@@ -191,7 +191,7 @@ export default function App() {
       // Reset form for next entry
       setFormData({
         name: '',
-        phone: '',
+        phone: '+91 ',
         company: '',
         outlets: '1',
         productionInterest: 'Display Cabinet',
@@ -218,14 +218,14 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-neutral-950 text-neutral-100 font-sans relative overflow-x-hidden">
-      {/* Background Steel Manufacturing Image with Gradient & Dark Industrial Overlay */}
+      {/* Fixed Full-Page Steel Manufacturing Background Image with Dark Industrial Overlay */}
       <div 
-        className="absolute inset-0 z-0 bg-cover bg-center opacity-30 pointer-events-none"
+        className="fixed inset-0 z-0 bg-cover bg-center opacity-40 pointer-events-none"
         style={{ 
-          backgroundImage: `url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=2000&q=80')` 
+          backgroundImage: `url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=2500&q=80')` 
         }}
       />
-      <div className="absolute inset-0 z-0 bg-gradient-to-b from-neutral-950/80 via-neutral-950/95 to-neutral-950 pointer-events-none" />
+      <div className="fixed inset-0 z-0 bg-gradient-to-b from-neutral-950/85 via-neutral-950/95 to-neutral-950 pointer-events-none" />
 
       {/* Hidden Sidebar Corner Trigger (Discreet colored indicator in top-right corner) */}
       <button
@@ -255,11 +255,18 @@ export default function App() {
           </p>
         </header>
 
-        {/* Hero Form Section */}
-        <div className="w-full max-w-2xl bg-neutral-900/90 border border-neutral-800/80 rounded-3xl p-6 md:p-10 shadow-2xl backdrop-blur-xl relative overflow-hidden">
-          
+        {/* Hero Form Section with Steel Manufacturing Background */}
+        <div 
+          className="w-full max-w-2xl border border-amber-500/30 rounded-3xl p-6 md:p-10 shadow-2xl backdrop-blur-xl relative overflow-hidden bg-cover bg-center"
+          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80')` }}
+        >
+          {/* Dark Industrial Gradient Overlay */}
+          <div className="absolute inset-0 bg-neutral-950/85 backdrop-blur-sm pointer-events-none" />
+
           {/* Top Industrial Accent Bar */}
-          <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600" />
+          <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 z-10" />
+
+          <div className="relative z-10">
 
           <div className="mb-8 pb-4 border-b border-neutral-800">
             <h2 className="text-xl md:text-2xl font-bold text-white flex items-center gap-2">
@@ -416,6 +423,7 @@ export default function App() {
             </button>
 
           </form>
+          </div>
         </div>
 
       </div>
