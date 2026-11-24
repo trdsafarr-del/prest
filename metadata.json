@@ -1,0 +1,6 @@
+{
+  "name": "Prestier System LLP - Steel Manufacturing Inquiry Portal",
+  "description": "Professional inquiry portal for steel manufacturing with real-time Google Sheets sync, Firebase persistence, and WhatsApp admin integration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
